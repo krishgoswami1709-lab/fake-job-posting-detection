@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Posting Detection System | AI Fraud Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-brand">
+                <div class="logo-icon">🛡️</div>
+                <div>
+                    <h1>Fake Job Posting Detection System</h1>
+                    <p class="subtitle">Machine Learning Fraud Identification & Unstructured Text Analysis Engine</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span>Model Active & Verified</span>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="detector-tab">🔍 Real-Time Job Detector</button>
+            <button class="tab-btn" data-tab="performance-tab">📊 Model Performance & Benchmarks</button>
+            <button class="tab-btn" data-tab="eda-tab">📈 Dataset Insights & Top Features</button>
+        </nav>
+
+        <!-- TAB 1: Detector -->
+        <section id="detector-tab" class="tab-content active">
+            <div class="detector-layout">
+                <!-- Form Container -->
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2>Job Posting Form</h2>
+                        <div class="preset-group">
+                            <span class="preset-label">Quick Load Samples:</span>
+                            <button class="btn-preset btn-preset-real" id="btn-sample-real">✨ Real Tech Job</button>
+                            <button class="btn-preset btn-preset-fake" id="btn-sample-scam1">⚠️ Wire Scam</button>
+                            <button class="btn-preset btn-preset-fake" id="btn-sample-scam2">🚨 WFH Scam</button>
+                            <button class="btn-preset btn-preset-clear" id="btn-sample-clear">🧹 Clear</button>
+                        </div>
+                    </div>
+
+                    <form id="job-form">
+                        <div class="form-group">
+                            <label for="title">Job Title <span class="required">*</span></label>
+                            <input type="text" id="title" placeholder="e.g. Senior Software Engineer or Online Data Entry Clerk" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="employment_type">Employment Type</label>
+                                <select id="employment_type">
+                                    <option value="Full-time">Full-time</option>
+                                    <option value="Part-time">Part-time</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Temporary">Temporary</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Unspecified">Unspecified</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="required_experience">Required Experience</label>
+                                <select id="required_experience">
+                                    <option value="Entry level">Entry level</option>
+                                    <option value="Mid-Senior level">Mid-Senior level</option>
+                                    <option value="Associate">Associate</option>
+                                    <option value="Executive">Executive</option>
+                                    <option value="Not Applicable">Not Applicable</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="required_education">Required Education</label>
+                                <select id="required_education">
+                                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                    <option value="Master's Degree">Master's Degree</option>
+                                    <option value="High School or equivalent">High School or equivalent</option>
+                                    <option value="Associate Degree">Associate Degree</option>
+                                    <option value="Unspecified">Unspecified</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company_profile">Company Profile / Background</label>
+                            <textarea id="company_profile" rows="3" placeholder="Brief history and description of the hiring organization..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Job Description <span class="required">*</span></label>
+                            <textarea id="description" rows="4" placeholder="Detailed job scope, responsibilities, and tasks..." required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="requirements">Requirements</label>
+                                <textarea id="requirements" rows="3" placeholder="Skills, qualifications, and background needed..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="benefits">Benefits & Compensation</label>
+                                <textarea id="benefits" rows="3" placeholder="Insurance, 401k, bonuses, vacation policies..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row flags-row">
+                            <div class="toggle-group">
+                                <input type="checkbox" id="has_company_logo" checked>
+                                <label for="has_company_logo">🏢 Company Logo Present</label>
+                            </div>
+                            <div class="toggle-group">
+                                <input type="checkbox" id="has_questions" checked>
+                                <label for="has_questions">❓ Screening Questions Present</label>
+                            </div>
+                            <div class="toggle-group">
+                                <input type="checkbox" id="telecommuting">
+                                <label for="telecommuting">🏠 Remote / Work-From-Home</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="btn-analyze">
+                            <span id="btn-text">🔍 Analyze Job Posting</span>
+                            <div class="spinner hidden" id="btn-spinner"></div>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Prediction Results Dashboard -->
+                <div class="card result-card" id="result-card">
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">📊</div>
+                        <h3>No Analysis Performed Yet</h3>
+                        <p>Fill in job details on the left or click a quick load sample to evaluate risk instantly.</p>
+                    </div>
+
+                    <div class="results-content hidden" id="results-content">
+                        <div class="result-header">
+                            <div class="gauge-box">
+                                <svg class="gauge-svg" viewBox="0 0 100 100">
+                                    <path class="gauge-bg" d="M 15 85 A 40 40 0 1 1 85 85" fill="none" stroke-width="10"/>
+                                    <path class="gauge-fill" id="gauge-fill" d="M 15 85 A 40 40 0 1 1 85 85" fill="none" stroke-width="10" stroke-dasharray="188.4" stroke-dashoffset="188.4"/>
+                                </svg>
+                                <div class="gauge-score">
+                                    <span id="score-val">0</span><span class="percent">%</span>
+                                    <span class="score-label">Fraud Risk</span>
+                                </div>
+                            </div>
+
+                            <div class="verdict-box">
+                                <div class="verdict-badge" id="verdict-badge">LEGITIMATE</div>
+                                <div class="risk-level" id="risk-level">LOW RISK</div>
+                                <p class="confidence-text">Model Confidence: <strong id="confidence-val">0%</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <!-- Risk Factors Section -->
+                        <div class="risk-factors-section">
+                            <h3>Risk Factor Assessment</h3>
+                            <div class="risk-factors-list" id="risk-factors-list">
+                                <!-- Dynamic Risk Factors -->
+                            </div>
+                        </div>
+
+                        <!-- Detected Scam Keywords -->
+                        <div class="keywords-section hidden" id="keywords-section">
+                            <h3>High-Risk Scam Keywords Detected</h3>
+                            <div class="keywords-cloud" id="keywords-cloud"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: Performance -->
+        <section id="performance-tab" class="tab-content">
+            <div class="card">
+                <h2>Comparative Model Evaluation Metrics</h2>
+                <p class="section-desc">Comparison of classification algorithms on 3,576 held-out test postings using stratified evaluation metrics.</p>
+
+                <div class="table-responsive">
+                    <table class="metrics-table" id="metrics-table">
+                        <thead>
+                            <tr>
+                                <th>Classification Algorithm</th>
+                                <th>Accuracy</th>
+                                <th>Precision</th>
+                                <th>Recall</th>
+                                <th>F1-Score</th>
+                                <th>ROC-AUC</th>
+                                <th>PR-AUC</th>
+                            </tr>
+                        </thead>
+                        <tbody id="metrics-tbody">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="experiments-grid">
+                <div class="card experiment-card">
+                    <h3>Experiment 1: Text Vectorization</h3>
+                    <p>Comparing TF-IDF with CountVectorizer</p>
+                    <div id="exp-vec-content"></div>
+                </div>
+                <div class="card experiment-card">
+                    <h3>Experiment 2: Text Cleaning Impact</h3>
+                    <p>Comparing Cleaned Text vs Raw Uncleaned Text</p>
+                    <div id="exp-clean-content"></div>
+                </div>
+                <div class="card experiment-card">
+                    <h3>Experiment 3: Structured Metadata Impact</h3>
+                    <p>Comparing Text + Metadata vs Text Only</p>
+                    <div id="exp-meta-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: EDA & Indicators -->
+        <section id="eda-tab" class="tab-content">
+            <div class="stats-grid" id="stats-grid">
+                <!-- EDA Stat Cards -->
+            </div>
+
+            <div class="indicators-grid">
+                <div class="card indicator-card">
+                    <h3 class="title-fake">🚨 Top Fraudulent Job Indicators</h3>
+                    <p class="subtitle-sm">Highest positive TF-IDF feature weights pushing prediction toward Fraud</p>
+                    <div class="terms-list" id="terms-fake"></div>
+                </div>
+
+                <div class="card indicator-card">
+                    <h3 class="title-real">✅ Top Legitimate Job Indicators</h3>
+                    <p class="subtitle-sm">Highest negative feature weights pushing prediction toward Authentic</p>
+                    <div class="terms-list" id="terms-real"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <p>Fake Job Posting Detection System &bull; Machine Learning Project Deliverable &bull; Antigravity AI</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

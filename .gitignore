@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+env/
+venv/
+*.log
+artifacts/processed_postings.csv
+fake_job_postings.csv
