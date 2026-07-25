@@ -1,10 +1,13 @@
 # 🛡️ Fake Job Posting Detection System
 
+> 🌐 **Live Interactive Web Demo**: **[https://krishgoswami1709-lab.github.io/fake-job-posting-detection/](https://krishgoswami1709-lab.github.io/fake-job-posting-detection/)**
+
 An end-to-end Machine Learning system and interactive Web Application for detecting fraudulent job postings using Natural Language Processing (NLP) and structured metadata engineering.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.2%2B-orange.svg)
 ![Flask](https://img.shields.io/badge/Flask-3.0%2B-green.svg)
+![GitHub Pages](https://img.shields.io/badge/Live--Demo-Active-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-purple.svg)
 
 ---
@@ -15,7 +18,14 @@ Employment scams cause severe financial losses and identity theft. This project 
 1. **Unstructured Text Analysis**: TF-IDF n-gram vectorization on titles, company profiles, descriptions, requirements, and benefits.
 2. **Structured Metadata Engineering**: Feature flags for missing logos, screening questions, company profiles, telecommuting options, word counts, and categorical one-hot encoding.
 3. **Multi-Model Evaluation**: Benchmarking across 7 classification algorithms (Logistic Regression, Complement Naive Bayes, Multinomial Naive Bayes, Random Forest, Extra Trees, Linear SVM, Gradient Boosting).
-4. **Interactive Web Application**: A Flask-powered web interface featuring a real-time **Fraud Risk Gauge**, risk-factor breakdown, and sample loaders.
+4. **Interactive Web Application**: A live web interface featuring a real-time **Fraud Risk Gauge**, risk-factor breakdown, and sample loaders.
+
+---
+
+## 🌐 Live Working Web Demo
+
+Test the live model directly in your browser without any installation:
+👉 **[https://krishgoswami1709-lab.github.io/fake-job-posting-detection/](https://krishgoswami1709-lab.github.io/fake-job-posting-detection/)**
 
 ---
 
@@ -46,11 +56,11 @@ Evaluated on a held-out stratified test set of **3,576 postings**:
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Local Installation Guide
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone https://github.com/YOUR_USERNAME/fake-job-posting-detection.git
+git clone https://github.com/krishgoswami1709-lab/fake-job-posting-detection.git
 cd fake-job-posting-detection
 pip install -r requirements.txt
 ```
@@ -66,7 +76,7 @@ python eda_and_preprocessing.py
 python train_models.py
 ```
 
-### 4. Launch the Web Application
+### 4. Launch Local Web Application
 ```bash
 python app.py
 ```
@@ -82,10 +92,10 @@ Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser!
 ├── train_models.py           # Classifier training & ablation experiments
 ├── predict_system.py         # Real-time inference engine & risk factor analysis
 ├── app.py                    # Flask REST API & Web Application server
-├── static/
-│   ├── index.html            # Web UI HTML
-│   ├── style.css             # Glassmorphic UI CSS system
-│   └── app.js                # Frontend AJAX & metric rendering JavaScript
+├── index.html                # GitHub Pages Live Web App HTML
+├── style.css                 # Glassmorphic UI CSS system
+├── app.js                    # Dual-mode (REST API + Browser JS) inference engine
+├── model_data.json           # Serialized metrics and EDA payload
 ├── models/                   # Serialized production model binaries (.joblib)
 ├── artifacts/                # EDA summary & evaluation reports (JSON)
 ├── requirements.txt          # Python package dependencies

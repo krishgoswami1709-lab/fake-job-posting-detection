@@ -1,0 +1,441 @@
+{
+  "evaluation_report": {
+    "model_comparisons": [
+      {
+        "model_name": "Logistic Regression (Balanced)",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Complement Naive Bayes",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Multinomial Naive Bayes",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Random Forest Classifier",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Extra Trees Classifier",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Linear SVM (SGDClassifier)",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      },
+      {
+        "model_name": "Gradient Boosting Classifier",
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+          [
+            3403,
+            0
+          ],
+          [
+            0,
+            173
+          ]
+        ]
+      }
+    ],
+    "best_model_name": "Logistic Regression (Balanced)",
+    "best_f1_score": 1.0,
+    "experiments": {
+      "Vectorization Comparison": {
+        "TF-IDF Vectorizer": {
+          "model_name": "Logistic Regression (Balanced)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        },
+        "Count Vectorizer": {
+          "model_name": "Logistic Regression (CountVectorizer)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        }
+      },
+      "Text Cleaning Impact": {
+        "Cleaned Text": {
+          "model_name": "Logistic Regression (Balanced)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        },
+        "Raw Uncleaned Text": {
+          "model_name": "Logistic Regression (Raw Text)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        }
+      },
+      "Metadata Feature Impact": {
+        "Text + Structured Metadata": {
+          "model_name": "Logistic Regression (Balanced)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        },
+        "Text Only": {
+          "model_name": "Text Only (No Metadata)",
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "confusion_matrix": [
+            [
+              3403,
+              0
+            ],
+            [
+              0,
+              173
+            ]
+          ]
+        }
+      }
+    },
+    "top_fake_indicators": [
+      {
+        "term": "uppercase_ratio",
+        "weight": 3.8214
+      },
+      {
+        "term": "home",
+        "weight": 1.8581
+      },
+      {
+        "term": "earn",
+        "weight": 1.8339
+      },
+      {
+        "term": "money",
+        "weight": 1.6179
+      },
+      {
+        "term": "online",
+        "weight": 1.3736
+      },
+      {
+        "term": "needed",
+        "weight": 1.3083
+      },
+      {
+        "term": "telecommuting",
+        "weight": 1.1792
+      },
+      {
+        "term": "transfer",
+        "weight": 1.0689
+      },
+      {
+        "term": "daily",
+        "weight": 1.0212
+      },
+      {
+        "term": "transfers",
+        "weight": 0.98
+      },
+      {
+        "term": "income",
+        "weight": 0.9404
+      },
+      {
+        "term": "provided",
+        "weight": 0.9395
+      },
+      {
+        "term": "immediately",
+        "weight": 0.9089
+      },
+      {
+        "term": "package",
+        "weight": 0.905
+      },
+      {
+        "term": "international",
+        "weight": 0.8836
+      },
+      {
+        "term": "reliable",
+        "weight": 0.8683
+      },
+      {
+        "term": "process",
+        "weight": 0.8394
+      },
+      {
+        "term": "packages",
+        "weight": 0.8388
+      },
+      {
+        "term": "data entry",
+        "weight": 0.8305
+      },
+      {
+        "term": "entry",
+        "weight": 0.8305
+      }
+    ],
+    "top_legitimate_indicators": [
+      {
+        "term": "has_company_logo",
+        "weight": -1.7503
+      },
+      {
+        "term": "has_questions",
+        "weight": -0.9049
+      },
+      {
+        "term": "word_count",
+        "weight": -0.8212
+      },
+      {
+        "term": "code",
+        "weight": -0.794
+      },
+      {
+        "term": "strong",
+        "weight": -0.7289
+      },
+      {
+        "term": "required_education_Bachelor's Degree",
+        "weight": -0.7207
+      },
+      {
+        "term": "software",
+        "weight": -0.6645
+      },
+      {
+        "term": "insurance",
+        "weight": -0.6449
+      },
+      {
+        "term": "proficiency",
+        "weight": -0.6339
+      },
+      {
+        "term": "skills",
+        "weight": -0.6339
+      },
+      {
+        "term": "required_experience_Mid-Senior level",
+        "weight": -0.633
+      },
+      {
+        "term": "executive",
+        "weight": -0.626
+      },
+      {
+        "term": "years",
+        "weight": -0.618
+      },
+      {
+        "term": "troubleshooting",
+        "weight": -0.6051
+      },
+      {
+        "term": "engineer",
+        "weight": -0.5945
+      },
+      {
+        "term": "business",
+        "weight": -0.5916
+      },
+      {
+        "term": "join",
+        "weight": -0.5518
+      },
+      {
+        "term": "growth",
+        "weight": -0.5503
+      },
+      {
+        "term": "enterprise",
+        "weight": -0.5441
+      },
+      {
+        "term": "problem",
+        "weight": -0.5424
+      }
+    ]
+  },
+  "eda_summary": {
+    "total_postings": 17880,
+    "real_postings": 17015,
+    "fraudulent_postings": 865,
+    "fraud_percentage": 4.84,
+    "fraud_rate_no_company_logo": 26.32,
+    "fraud_rate_with_company_logo": 1.01,
+    "fraud_rate_no_screening_questions": 8.02,
+    "fraud_rate_with_screening_questions": 2.1,
+    "fraud_rate_no_company_profile": 13.8,
+    "fraud_rate_with_company_profile": 3.06,
+    "avg_word_count_real": 85.3,
+    "avg_word_count_fraud": 70.3
+  }
+}
